@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+Se usa una arquitectura basada en DDD, usando service objects ...
+Se inyectan los features obtenidos de earthquake.usgs.gov usando inserccion por lotes
+Se usa patron repositorio para acceder a la db e inyeccion de dependencias para inyectar repositorios en los servicios
