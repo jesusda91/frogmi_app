@@ -9,9 +9,14 @@ module Common
       class << self
         delegate :insert_all, to: :new
         delegate :count, to: :new
+        delegate :create, to: :new
       end
 
       def insert_all(data)
+        raise NotImplementedError, 'Subclasses must implement this method'
+      end
+
+      def create(data)
         raise NotImplementedError, 'Subclasses must implement this method'
       end
 

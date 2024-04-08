@@ -5,10 +5,6 @@ module Api
       Features::ServiceObjects::ListAll.new({ **list_params, filters: filters }.with_indifferent_access, callbacks).call
     end
 
-    def create
-      render json: { msg: 'create' }, status: :ok
-    end
-
     private
 
     def list_params

@@ -18,8 +18,6 @@ module Features
       def call
         return callbacks[:failure].call('per_page must be <= 1000.') if invalid_per_page?
 
-        p '*' * 100
-        p filter_conditions
         features = features_repository.paginate(filter_conditions, per_page, page)
 
         response = {

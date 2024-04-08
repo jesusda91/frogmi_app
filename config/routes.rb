@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     get '/features', to: 'features#index'
-    post '/features', to: 'features#create'
+
+    post '/features/:feature_id/comments', to: 'comments#create'
   end
 end
