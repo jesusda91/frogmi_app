@@ -6,10 +6,7 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   namespace :api, defaults: { format: :json } do
-    namespace :v1 do
-      # project
-      get '/features', to: 'features#index'
-      post '/features', to: 'features#create'
-    end
+    get '/features', to: 'features#index'
+    post '/features', to: 'features#create'
   end
 end

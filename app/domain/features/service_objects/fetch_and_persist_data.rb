@@ -58,7 +58,7 @@ module Features
           place: properties['place'], mag_type: properties['magType'],
           longitude: geometry['coordinates'][0], latitude: geometry['coordinates'][1],
           magnitude: properties['mag'], time: Time.at(properties['time'] / 1000),
-          external_id: id
+          external_id: id, tsunami: properties['tsunami']
         }
       end
 
