@@ -10,6 +10,7 @@ module Common
         delegate :insert_all, to: :new
         delegate :count, to: :new
         delegate :create, to: :new
+        delegate :find, to: :new
       end
 
       def insert_all(data)
@@ -17,7 +18,11 @@ module Common
       end
 
       def create(data)
-        raise NotImplementedError, 'Subclasses must implement this method'
+        model.create(data)
+      end
+
+      def find(param)
+        model.find(param)
       end
 
       def count

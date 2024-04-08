@@ -17,12 +17,12 @@ module Comments
       end
 
       def call
-        feature = Feature.find(feature_id)
+        feature = features_repository.find(feature_id)
         return callbacks[:failure].call('comment body is required') if body.blank?
 
         comment = comments_repository.create(feature: feature, body: body)
 
-        callbacks[:success].call(comment)
+        callbacks[:success].call(comment, :created)
       rescue ActiveRecord::RecordNotFound
         callbacks[:failure].call("Feature with ID #{feature_id} not found")
       end
@@ -30,7 +30,6 @@ module Comments
       private
 
       attr_reader :feature_id, :body, :callbacks, :comments_repository, :features_repository
-
     end
   end
 end

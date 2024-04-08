@@ -8,3 +8,8 @@ Metrics/MethodLength:
     - 'db/migrate/*'
 Metrics/AbcSize:
   Enabled: false
+Metrics/BlockLength:
+  Exclude:
+      - 'db/migrate/*'
+      - 'db/schema.rb'
+      - 'spec/**/*'
