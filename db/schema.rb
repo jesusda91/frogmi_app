@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_07_155409) do
     t.string "time"
     t.string "url", null: false
     t.boolean "tsunami"
-    t.string "magnitude_type", null: false
+    t.string "mag_type", null: false
     t.string "title", null: false
     t.decimal "longitude", null: false
     t.decimal "latitude", null: false

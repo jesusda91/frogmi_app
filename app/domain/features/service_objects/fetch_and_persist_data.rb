@@ -55,7 +55,7 @@ module Features
       def build_feature_data(id, properties, geometry)
         {
           title: properties['title'], url: properties['url'],
-          place: properties['place'], magnitude_type: properties['magType'],
+          place: properties['place'], mag_type: properties['magType'],
           longitude: geometry['coordinates'][0], latitude: geometry['coordinates'][1],
           magnitude: properties['mag'], time: Time.at(properties['time'] / 1000),
           external_id: id

@@ -6,8 +6,17 @@ module Common
     # using Active Record. Subclasses should implement specific commands for
     # interacting with the database.
     class ArCommandsRepository
-      def create(data)
+      class << self
+        delegate :insert_all, to: :new
+        delegate :count, to: :new
+      end
+
+      def insert_all(data)
         raise NotImplementedError, 'Subclasses must implement this method'
+      end
+
+      def count
+        model.count
       end
 
       def initialize(model = nil)
